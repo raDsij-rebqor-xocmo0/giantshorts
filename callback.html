@@ -1,0 +1,14 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Giant Shorts – вход</title><style>body{font:17px/1.6 system-ui,sans-serif;max-width:680px;margin:48px auto;padding:0 20px;color:#222}code{background:#eee;padding:4px 8px;border-radius:6px;word-break:break-all}</style></head>
+<body><h1>Возвращаемся в скрипт…</h1>
+<p>Если ничего не произошло, скопируйте адрес этой страницы целиком и вставьте в терминал.</p>
+<p id="err"></p>
+<script>
+  // Передаём code и state скрипту на этом же компьютере
+  var q = location.search;
+  if (q && q.indexOf("code=") !== -1) {
+    location.replace("http://localhost:8765/callback" + q);
+  } else {
+    document.getElementById("err").textContent = "В адресе нет кода авторизации: " + q;
+  }
+</script></body></html>
